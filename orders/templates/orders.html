@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="max-w-4xl mx-auto px-4 py-8">
+    <h1 class="mb-10 text-2xl font-bold">Meus Pedidos</h1>
+    {% if orders %}
+      <div class="space-y-6">
+        {% for order in orders %}
+          <a href="{% url 'order_detail' order.pk %}" class="block transition-shadow duration-300 hover:shadow-xl">
+            <div class="p-4 border rounded-lg shadow-md hover:bg-gray-50">
+              <p><strong>ID do Pedido:</strong> #{{ order.id }}</p>
+              <p><strong>Status:</strong> {{ order.get_status_display }}</p>
+              <p><strong>Total:</strong> R$ {{ order.total_price }}</p>
+              <p><strong>Data:</strong> {{ order.created_at|date:"d/m/Y H:i" }}</p>
+            </div>
+          </a>
+        {% endfor %}
+      </div>
+    {% else %}
+      <p>Você ainda não fez nenhum pedido.</p>
+    {% endif %}
+  </div>
+{% endblock %}

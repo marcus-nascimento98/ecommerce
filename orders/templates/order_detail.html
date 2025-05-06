@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="max-w-5xl mx-auto px-6 py-10">
+    <h1 class="text-3xl font-bold mb-8 text-gray-800">Detalhes do Pedido</h1>
+
+    <div class="bg-white shadow-xl rounded-2xl p-6 border border-gray-200">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <p class="text-gray-600 text-sm">ID do Pedido</p>
+          <p class="text-lg font-medium text-gray-900 mb-4">#{{ order.id }}</p>
+          <p class="text-gray-600 text-sm">Status</p>
+          <p class="text-lg font-medium text-gray-900 mb-4">{{ order.get_status_display }}</p>
+          <p class="text-gray-600 text-sm">Total</p>
+          <p class="text-lg font-medium text-green-600 mb-4">R$ {{ order.total_price }}</p>
+        </div>
+        <div>
+          <p class="text-gray-600 text-sm">Data do Pedido</p>
+          <p class="text-lg font-medium text-gray-900 mb-4">{{ order.created_at|date:"d/m/Y H:i" }}</p>
+          <p class="text-gray-600 text-sm">Endereço de Entrega</p>
+          <p class="text-lg font-medium text-gray-900">{{ order.address_delivery.street_name }}, {{ order.address_delivery.number }} - {{ order.address_delivery.neighborhood }} {{ order.address_delivery.city }}/{{ order.address_delivery.state }}</p>
+        </div>
+      </div>
+
+      <hr class="my-6 border-gray-300">
+
+      <h2 class="text-xl font-semibold text-gray-800 mb-4">Produtos do Pedido</h2>
+      <ul class="space-y-4">
+        {% for product in products %}
+          <li class="flex items-center justify-between p-4 bg-gray-50 rounded-lg shadow-sm hover:shadow-md transition duration-200">
+            <div>
+              <p class="text-gray-900 font-medium">{{ product.product.name }}</p>
+              <p class="text-gray-500 text-sm">Quantidade: {{ product.quantity }}</p>
+            </div>
+            <div class="text-right">
+              <img src="{{ product.product.photo.url }}" alt="{{ product.product.name }}" class="w-32 h-32 object-cover rounded-md">
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
+
+      <div class="mt-8">
+        <a href="{% url 'orders' %}" class="inline-flex items-center text-sm text-blue-600 hover:underline">
+          ← Voltar para Meus Pedidos
+        </a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

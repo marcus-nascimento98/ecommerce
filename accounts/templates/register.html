@@ -1,0 +1,103 @@
+{% load widget_tweaks %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  </head>
+  <body>
+    <div class="min-h-screen flex flex-col items-center justify-center bg-gray-100">
+      <div class="flex flex-col bg-white shadow-md px-4 sm:px-6 md:px-8 lg:px-10 py-8 rounded-3xl w-50 max-w-sm my-10">
+        <div class="font-medium self-center text-xl sm:text-3xl text-gray-800">Registre-se</div>
+        <div class="mt-4 self-center text-xl sm:text-sm text-gray-800">Insira suas credenciais para obter acesso à conta</div>
+
+        <div class="mt-10">
+          <form method="post">
+            {% csrf_token %} {% if user_form.non_field_errors %}
+            <div class="mb-4 text-red-500 text-sm">
+              {% for error in user_form.non_field_errors %}
+              <p>{{ error }}</p>
+              {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="flex flex-col mb-3">
+              <label for="{{ user_form.username.id_for_label }}" class="mb-1 text-xs tracking-wide text-gray-600">Usuário:</label>
+              <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+                  <i class="fas fa-user text-blue-500"></i>
+                </div>
+                {{ user_form.username|add_class:"text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" }}
+              </div>
+              {% if user_form.username.errors %}
+              <p class="text-xs text-red-500 mt-1">{{ user_form.username.errors.0 }}</p>
+              {% endif %}
+            </div>
+
+            <div class="flex flex-col mb-3">
+              <label for="{{ user_form.email.id_for_label }}" class="mb-1 text-xs tracking-wide text-gray-600">Email:</label>
+              <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+                  <i class="fas fa-at text-blue-500"></i>
+                </div>
+                {{ user_form.email|add_class:"text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" }}
+              </div>
+              {% if user_form.email.errors %}
+              <p class="text-xs text-red-500 mt-1">{{ user_form.email.errors.0 }}</p>
+              {% endif %}
+            </div>
+
+            <div class="flex flex-col mb-6">
+              <label for="{{ user_form.password1.id_for_label }}" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Senha:</label>
+              <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+                  <i class="fas fa-lock text-blue-500"></i>
+                </div>
+                {{ user_form.password1|add_class:"text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" }}
+              </div>
+              {% if user_form.password1.errors %}
+              <p class="text-xs text-red-500 mt-1">{{ user_form.password1.errors.0 }}</p>
+              {% endif %}
+            </div>
+
+            <div class="flex flex-col mb-6">
+              <label for="{{ user_form.password2.id_for_label }}" class="mb-1 text-xs sm:text-sm tracking-wide text-gray-600">Confirmação de senha:</label>
+              <div class="relative">
+                <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+                  <i class="fas fa-lock text-blue-500"></i>
+                </div>
+                {{ user_form.password2|add_class:"text-sm placeholder-gray-500 pl-10 pr-4 rounded-2xl border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" }}
+              </div>
+              {% if user_form.password2.errors %}
+              <p class="text-xs text-red-500 mt-1">{{ user_form.password2.errors.0 }}</p>
+              {% endif %}
+            </div>
+
+            <div class="flex w-full">
+              <button type="submit" class="flex mt-2 items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-500 hover:bg-blue-600 rounded-2xl py-2 w-full transition duration-150 ease-in">
+                <span class="mr-2 uppercase">Registrar</span>
+                <span>
+                  <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                    <path d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                </span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="flex justify-center items-center mt-6">
+        <a href="#" target="_blank" class="inline-flex items-center text-gray-700 font-medium text-xs text-center">
+          <span class="ml-2">Você já tem uma conta?<a href="{% url 'login' %}" class="text-xs ml-2 text-blue-500 font-semibold">Acesse aqui</a></span>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
