@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -12,6 +13,7 @@
     </script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+
 </head>
 
 <body>
@@ -19,11 +21,12 @@
         <div class="bg-white" x-data="{mobileMenuOpen: false}">
             {% include 'components/_header.html' %}
             {% block content %}
-            
+
             {% endblock %}
             {% include 'components/_footer.html' %}
         </div>
+    <script>window.CSRF_TOKEN = "{{ csrf_token }}";</script>
+    <script src="{% static 'js/script.js' %}"></script>
 </body>
-
 
 </html>
