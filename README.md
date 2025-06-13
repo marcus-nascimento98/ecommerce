@@ -22,7 +22,7 @@
 Antes de iniciar a codificação, o fluxo foi projetado no Whimsical.  
 Você pode conferir o diagrama de desenvolvimento em:
 
-![Diagrama de arquitetura](docs/image/diagrams.png)
+![Diagrama de arquitetura](docs/images/diagrams.png)
 
 ---
 
@@ -117,43 +117,43 @@ Você pode conferir o diagrama de desenvolvimento em:
 ## 🖼️ Capturas de Tela
 
 ### 📋 Tela Principal
-![Tela Principal](docs/image/products.png)
+![Tela Principal](docs/images/products.png)
 
 ### 📋 Tela de Login
-![Tela de Login](docs/image/login.png)
+![Tela de Login](docs/images/login.png)
 
 ### 📝 Tela de Registro
-![Tela de Registro](docs/image/register.png)
+![Tela de Registro](docs/images/register.png)
 
 ### 📝 Tela do Carrinho
-![Tela de Registro](docs/image/cart.png)
+![Tela de Registro](docs/images/cart.png)
 
 ### 📝 Tela do Produto
-![Visualização Detalhada](docs/image/product_detail.png)
+![Visualização Detalhada](docs/images/product_detail.png)
 
 ### 📝 Footer
-![Visualização Detalhada](docs/image/footer.png)
+![Visualização Detalhada](docs/images/footer.png)
 
 ### 📝 Produto Adicionado ao Carrinho
-![Visualização Detalhada](docs/image/add_cart.png)
+![Visualização Detalhada](docs/images/add_cart.png)
 
 ### 📝 Tela de Cadastro de Endereço
-![Visualização Detalhada](docs/image/address.png)
+![Visualização Detalhada](docs/images/address.png)
 
 ### 📝 Menu Dropdown
-![Visualização Detalhada](docs/image/dropdown.png)
+![Visualização Detalhada](docs/images/dropdown.png)
 
 ### 📝 Filtro
-![Visualização Detalhada](docs/image/filter.png)
+![Visualização Detalhada](docs/images/filter.png)
 
 ### 📝 Pedido Finalizado
-![Visualização Detalhada](docs/image/fineshed_cart.png)
+![Visualização Detalhada](docs/images/fineshed_cart.png)
 
 ### 📝 Tela de Entrada do Django Admin
-![Visualização Detalhada](docs/image/inflows.png)
+![Visualização Detalhada](docs/images/inflows.png)
 
 ### 📝 Tela de Saída do Django Admin
-![Visualização Detalhada](docs/image/outflows.png)
+![Visualização Detalhada](docs/images/outflows.png)
 
 ---
 
