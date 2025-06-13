@@ -9,7 +9,7 @@
 - [Modelagem de Dados](#modelagem-de-dados)  
 - [Tech Stack](#tech-stack)  
 - [Instalação](#instalação)
-- [Capturas de Tela](#capturas-de-tela) 
+- [Captura de Tela](#captura-de-tela) 
 
 
 ---
