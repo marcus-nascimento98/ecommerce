@@ -13,4 +13,3 @@ class ProductCart(models.Model):
 
     def __str__(self):
         return f"Cart #{self.cart.id} - Product #{self.product.id} (Qty: {self.quantity})"
-

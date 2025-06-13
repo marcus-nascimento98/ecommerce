@@ -1,6 +1,7 @@
 from django.db import models
 from django.conf import settings
 
+
 class Cart(models.Model):
     STATUS_CHOICES = [
         ('open', 'Open'),

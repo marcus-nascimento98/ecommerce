@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
   const csrfToken = window.CSRF_TOKEN;
-
   const openModalBtn = document.getElementById("openModalBtn");
   const closeModalBtn = document.getElementById("closeModalBtn");
   const modal = document.getElementById("addressModal");

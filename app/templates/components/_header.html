@@ -10,6 +10,43 @@
             <img class="h-14 w-auto"  src="{% static 'assets/logo.png' %}" alt="">
           </a>
         </div>
+        <div class="lg:hidden relative" x-data="{ mobileMenuOpen: false }" x-cloak>
+          <button @click="mobileMenuOpen = !mobileMenuOpen" class="flex items-center space-x-2">
+            <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+            <span class="text-sm font-medium">Menu</span>
+          </button>
+          <div x-show="mobileMenuOpen"
+              x-transition:enter="transition ease-out duration-200"
+              x-transition:enter-start="opacity-0 -translate-y-2"
+              x-transition:enter-end="opacity-100 translate-y-0"
+              x-transition:leave="transition ease-in duration-150"
+              x-transition:leave-start="opacity-100 translate-y-0"
+              x-transition:leave-end="opacity-0 -translate-y-2"
+              class="absolute left-0 mt-2 w-64 max-h-96 overflow-y-auto rounded-md shadow-xl bg-white ring-1 ring-black ring-opacity-5 z-50">
+            <div class="px-4 py-2 text-gray-800 font-semibold border-b">Categorias</div>
+            <div class="divide-y divide-gray-100">
+              <a href="{% url 'products_list' %}?category=processador" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Processadores</a>
+              <a href="{% url 'products_list' %}?category=placa de video" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Placa de vídeo</a>
+              <a href="{% url 'products_list' %}?category=memoria ram" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Memória</a>
+              <a href="{% url 'products_list' %}?category=fonte" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Fontes</a>
+              <a href="{% url 'products_list' %}?category=memoria" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Discos Rígidos</a>
+              <a href="{% url 'products_list' %}?category=placa mae" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Placa Mãe</a>
+              <a href="{% url 'products_list' %}?category=headset" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Headsets</a>
+              <a href="{% url 'products_list' %}?category=teclado" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Teclados</a>
+              <a href="{% url 'products_list' %}?category=mouse" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mouse</a>
+              <a href="{% url 'products_list' %}?category=mousepad" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Mousepad</a>
+              <a href="{% url 'products_list' %}?category=webcam" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Webcam</a>
+              <a href="{% url 'products_list' %}?category=joystick" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Joystick</a>
+              <a href="{% url 'products_list' %}?category=aircooler" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cooler CPU</a>
+              <a href="{% url 'products_list' %}?category=fan" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Cooler Gabinete</a>
+              <a href="{% url 'products_list' %}?category=pasta termica" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Pasta Térmica</a>
+              <a href="{% url 'products_list' %}?category=water cooler" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Water Cooler</a>
+            </div>
+          </div>
+        </div>
         <div class="hidden lg:ml-8 lg:block lg:self-stretch" x-data="{ activeMenuItem: 0 }">
           <div class="flex h-full space-x-8">
             <div class="flex">
@@ -40,7 +77,7 @@
                               alt="Models sitting back to back, wearing Basic Tee in black and bone."
                               class="object-cover object-center">
                           </div>
-                          <a href="#" class="mt-6 block font-medium text-gray-900">
+                          <a href="{% url 'products_list' %}?category=celular" class="mt-6 block font-medium text-gray-900">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                             Celulares
                           </a>
@@ -54,7 +91,7 @@
                               alt="Close up of Basic Tee fall bundle with off-white, ochre, olive, and black tees."
                               class="object-cover object-center">
                           </div>
-                          <a href="#" class="mt-6 block font-medium text-gray-900">
+                          <a href="{% url 'products_list' %}?category=televisao" class="mt-6 block font-medium text-gray-900">
                             <span class="absolute inset-0 z-10" aria-hidden="true"></span>
                             Televisões
                           </a>
@@ -67,22 +104,22 @@
                           <ul role="list" aria-labelledby="Clothing-heading"
                             class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Processadores</a>
+                              <a href="{% url 'products_list' %}?category=processador" class="hover:text-gray-800">Processadores</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Placa de vídeo</a>
+                              <a href="{% url 'products_list' %}?category=placa de video" class="hover:text-gray-800">Placa de vídeo</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Memória</a>
+                              <a href="{% url 'products_list' %}?category=memoria ram" class="hover:text-gray-800">Memória</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Fontes</a>
+                              <a href="{% url 'products_list' %}?category=fonte" class="hover:text-gray-800">Fontes</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Discos Rígidos</a>
+                              <a href="{% url 'products_list' %}?category=memoria" class="hover:text-gray-800">Discos Rígidos</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Placa Mãe</a>
+                              <a href="{% url 'products_list' %}?category=placa mae" class="hover:text-gray-800">Placa Mãe</a>
                             </li>
                           </ul>
                         </div>
@@ -92,24 +129,24 @@
                           <ul role="list" aria-labelledby="Accessories-heading"
                             class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
                             <li class="flex">
-                              <a href="{% url 'products_list' %}?category=Headset"
+                              <a href="{% url 'products_list' %}?category=headset"
                                 class="hover:text-gray-800">Headsets</a>
                             </li>
                             <li class="flex">
-                              <a href="{% url 'products_list' %}?category=Teclado"
+                              <a href="{% url 'products_list' %}?category=teclado"
                                 class="hover:text-gray-800">Teclados</a>
                             </li>
                             <li class="flex">
-                              <a href="{% url 'products_list' %}?category=Mouse" class="hover:text-gray-800">Mouses</a>
+                              <a href="{% url 'products_list' %}?category=mouse" class="hover:text-gray-800">Mouses</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Mousepad</a>
+                              <a href="{% url 'products_list' %}?category=mousepad" class="hover:text-gray-800">Mousepad</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">WebCam</a>
+                              <a href="{% url 'products_list' %}?category=webcam" class="hover:text-gray-800">WebCam</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Joystick</a>
+                              <a href="{% url 'products_list' %}?category=joystick" class="hover:text-gray-800">Joystick</a>
                             </li>
                           </ul>
                         </div>
@@ -118,16 +155,16 @@
                             Refrigeração</p>
                           <ul role="list" aria-labelledby="Brands-heading" class="mt-6 space-y-6 sm:mt-4 sm:space-y-4">
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Cooler CPU</a>
+                              <a href="{% url 'products_list' %}?category=aircooler" class="hover:text-gray-800">Cooler CPU</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Cooler Gabinete</a>
+                              <a href="{% url 'products_list' %}?category=fan" class="hover:text-gray-800">Cooler Gabinete</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Pasta Térmica</a>
+                              <a href="{% url 'products_list' %}?category=pasta termica" class="hover:text-gray-800">Pasta Térmica</a>
                             </li>
                             <li class="flex">
-                              <a href="#" class="hover:text-gray-800">Water Cooler</a>
+                              <a href="{% url 'products_list' %}?category=water cooler" class="hover:text-gray-800">Water Cooler</a>
                             </li>
                           </ul>
                         </div>
@@ -137,23 +174,26 @@
                 </div>
               </div>
             </div>
-            <a href="{% url 'products_list' %}?category=PC Gamer" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">PC Gamer</a>
-            <a href="{% url 'products_list' %}?category=Kit Upgrade" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Kit Upgrade</a>
+            <a href="{% url 'products_list' %}?category=pc-gamer" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">PC Gamer</a>
+            <a href="{% url 'products_list' %}?category=kit upgrade" class="flex items-center text-sm font-medium text-gray-700 hover:text-gray-800">Kit Upgrade</a>
           </div>
         </div>
         <div class="ml-auto flex items-center">
           <div class="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
             <span class="h-6 w-px bg-gray-200" aria-hidden="true"></span>
           </div>
-          <div class="flex lg:ml-6">
-            <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+          <div class="flex items-center lg:ml-6 relative">
+            <button id="searchToggle" class="p-2 text-gray-400 hover:text-gray-500 focus:outline-none">
               <span class="sr-only">Search</span>
               <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
                 aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round"
                   d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
               </svg>
-            </a>
+            </button>
+            <input type="text" id="searchInput"
+              class="ml-2 hidden transition-all duration-300 ease-in-out border border-gray-300 rounded px-2 py-1 focus:outline-none focus:ring-2 focus:ring-red-500"
+              placeholder="Search..." />
           </div>
           <div class="ml-4 flow-root lg:ml-6">
             <a href="{% url 'products_cart' %}" class="group -m-2 flex items-center p-2">
@@ -175,8 +215,7 @@
               </svg>
             </a>
           </div>
-
-          <div id="dropdown" class="hidden drop-down  w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3">
+          <div id="dropdown" class="hidden drop-down  w-48 overflow-hidden bg-white rounded-md shadow absolute top-12 right-3 z-50">
             <ul>
               {% if user.is_authenticated %}
                 <a href="{% url 'orders' %}" class="block">

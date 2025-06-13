@@ -11,5 +11,5 @@ def cart_count(request):
         count = ProductCart.objects.filter(cart=cart).aggregate(total_quantity=Sum("quantity"))["total_quantity"] or 0
     else:
         count = 0
-    
+
     return {'cart_count': count}

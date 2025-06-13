@@ -4,7 +4,7 @@ from brands.models import Brand
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=500)    
+    name = models.CharField(max_length=500)
     description = models.TextField(null=True, blank=True)
     category = models.ForeignKey(Category, on_delete=models.PROTECT, related_name='products')
     brand = models.ForeignKey(Brand, on_delete=models.PROTECT, related_name='products')

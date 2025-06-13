@@ -77,12 +77,12 @@ def finish_cart(request):
                     product=product.product,
                     quantity=product.quantity
                 )
-                outflow.full_clean() 
+                outflow.full_clean()
                 outflow.save()
 
             try:
                 cart = Cart.objects.get(id=cart_order)
-                order = Order.objects.create(
+                Order.objects.create(
                     user=user,
                     address_delivery=delivery_addresses,
                     total_price=total,
@@ -97,4 +97,3 @@ def finish_cart(request):
                 return redirect('pagina_erro')
 
     return redirect('/')
-

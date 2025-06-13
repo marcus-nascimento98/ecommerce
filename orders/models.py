@@ -4,6 +4,7 @@ from accounts.models import DeliveryAddress
 from django.contrib.auth.models import User
 from django.conf import settings
 
+
 class Order(models.Model):
     STATUS_CHOICES = [
         ('paid', 'Paid'),

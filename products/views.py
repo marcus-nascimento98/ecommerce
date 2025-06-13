@@ -1,4 +1,3 @@
-from django.shortcuts import render
 from django.views.generic import DetailView, ListView
 from .models import Product
 
@@ -10,7 +9,7 @@ class ProductListView(ListView):
 
     def get_queryset(self):
         queryset = super().get_queryset()
-        category = self.request.GET.get('category') 
+        category = self.request.GET.get('category')
 
         if category:
             queryset = queryset.filter(category__name__icontains=category)

@@ -4,22 +4,11 @@
   Carrinho 
 {% endblock %} 
 
-
 {% block content %}
-<!-- <style>
-  @layer utilities {
-    input[type="number"]::-webkit-inner-spin-button,
-    input[type="number"]::-webkit-outer-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
-    }
-  }
-</style> -->
 
 <div class="min-h-screen bg-gray-100 pt-20">
   <form method="post" id="finish-form" action="{% url 'finish' %}">
     {% csrf_token %}
-
     <h1 class="mb-10 text-center text-2xl font-bold">Itens no Carrinho</h1>
     <div class="mx-auto max-w-5xl justify-center px-6 md:flex md:space-x-6 xl:px-0">
       <div class="rounded-lg md:w-2/3">
@@ -80,7 +69,6 @@
           <div>
             <p id="total" class="mb-1 text-lg font-bold">R$ {{ total }}</p>
             <input type="hidden" id="total_input" name="total" value="" />
-
             <p class="text-sm text-gray-700">Impostos incluídos</p>
           </div>
         </div>
@@ -89,7 +77,6 @@
     </div>
   </form>
 </div>
-
 <div id="addressModal" class="fixed inset-0 z-50 hidden bg-black bg-opacity-50 flex items-center justify-center p-4 overflow-y-auto">
   <div class="bg-white rounded-lg shadow-lg w-full max-w-3xl p-6 relative">
     <h2 class="text-xl font-semibold mb-4">Cadastrar Endereço</h2>
@@ -131,13 +118,11 @@
         <label for="estado" class="block text-sm font-medium text-gray-700">Estado</label>
         <input type="text" name="state" id="estado" required class="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm" />
       </div>
-
       <div class="md:col-span-2 flex justify-end mt-4 space-x-2">
         <button type="button" id="closeModalBtn" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Cancelar</button>
         <button type="submit" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Salvar</button>
       </div>
     </form>
-
   </div>
 </div>
 
