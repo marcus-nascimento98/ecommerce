@@ -1,8 +1,5 @@
 # Ecommerce de Tecnologia 🚀
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()  
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
-
 > Projeto de e-commerce feito em Django para praticar conceitos de backend, frontend com Tailwind CSS, AJAX e JavaScript, seguindo boas práticas de PEP8 e arquitetura escalável.
 
 ## Índice
