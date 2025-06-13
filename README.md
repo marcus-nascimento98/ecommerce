@@ -86,8 +86,8 @@ Você pode conferir o diagrama de desenvolvimento em:
 
 1. **Clone o repositório**  
    ```bash
-   git clone https://github.com/seu_usuario/ecommerce-tecnologia.git
-   cd ecommerce-tecnologia
+   git clone https://github.com/marcus-nascimento98/ecommerce.git
+   cd ecommerce
    ```
 
 2. **Crie e ative um ambiente virtual**  
