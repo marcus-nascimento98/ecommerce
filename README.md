@@ -8,12 +8,9 @@
 - [Funcionalidades](#funcionalidades)  
 - [Modelagem de Dados](#modelagem-de-dados)  
 - [Tech Stack](#tech-stack)  
-- [Instalação](#instalação)  
-- [Uso](#uso)  
-- [Demonstração](#demonstração)  
-- [Contribuição](#contribuição)  
-- [Licença](#licença)  
-- [Autores](#autores)  
+- [Instalação](#instalação)
+- [Capturas de Tela](#capturas-de-tela) 
+
 
 ---
 
