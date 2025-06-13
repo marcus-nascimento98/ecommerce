@@ -143,7 +143,7 @@ Você pode conferir o diagrama de desenvolvimento em:
 ![Visualização Detalhada](docs/images/filter.png)
 
 ### 📝 Pedido Finalizado
-![Visualização Detalhada](docs/images/fineshed_cart.png)
+![Visualização Detalhada](docs/images/finished_cart.png)
 
 ### 📝 Tela de Entrada do Django Admin
 ![Visualização Detalhada](docs/images/inflows.png)
