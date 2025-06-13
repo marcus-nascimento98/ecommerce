@@ -110,7 +110,7 @@ Você pode conferir o diagrama de desenvolvimento em:
 
 ---
 
-## 🖼️ Capturas de Tela
+## Capturas de Tela
 
 ### 📋 Tela Principal
 ![Tela Principal](docs/images/products.png)
